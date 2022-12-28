@@ -1,0 +1,56 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push">
+
+        <mat-toolbar color="primary">
+            <span>Menu</span>
+            <span class="spacer"></span>
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>            
+        </mat-toolbar>
+
+        <mat-nav-list>
+            <a routerLink="./list" mat-list-item (click)="sidenav.toggle()">
+                Listado de Funciones
+                <mat-icon mat-list-icon>list</mat-icon>
+            </a>
+        </mat-nav-list>
+
+        <mat-nav-list>
+            <a mat-list-item (click)="openDialog()">
+                Añadir Funcion
+                <mat-icon mat-list-icon>add</mat-icon>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-toolbar color="primary">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <a mat-button routerLink="/movies/list" color="">
+            Películas
+        </a>
+
+        <a mat-button routerLink="/rooms/list" color="">
+            Salas
+        </a>
+
+        <a mat-button routerLink="./list" color="">
+            Funciones
+        </a>
+        
+        <span class="spacer"></span>
+
+        <a mat-button (click)="logout()" color="">
+            Logout
+        </a>
+
+    </mat-toolbar>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+</mat-sidenav-container>

@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Crear Función</h1>
+<div mat-dialog-content>
+    <form [formGroup]="functionForm">
+        <!-- Codigo -->
+        <mat-form-field appearance="outline">
+            <mat-label>Código</mat-label>
+            <input formControlName="code" matInput placeholder="0001">
+        </mat-form-field>
+    
+        <!-- Película -->
+        <mat-form-field appearance="fill">
+            <mat-label>Película</mat-label>
+             <mat-select formControlName="movie" placeholder="Titanic">
+                <mat-option *ngFor="let movie of movies" [value]="movie.id">{{movie.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>   
+
+        <!-- Sala -->
+        <mat-form-field appearance="fill">
+            <mat-label>Sala</mat-label>
+             <mat-select formControlName="room" placeholder="SALA1">
+                <mat-option *ngFor="let room of rooms" [value]="room.id">{{room.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- Fecha -->
+          <mat-form-field appearance="outline">
+            <mat-label>Fecha</mat-label>
+            <input type="date" formControlName="date" matInput placeholder="">
+        </mat-form-field>
+        
+        <!-- Hora -->
+        <mat-form-field appearance="outline">
+            <mat-label>Hora</mat-label>
+            <input type="time" formControlName="time" matInput placeholder="">
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cerrar</button>
+    <button mat-raised-button style="margin-left: 8px;" color="primary" (click)="addFunction()" mati-dialog-close>Guardar</button>
+</div>

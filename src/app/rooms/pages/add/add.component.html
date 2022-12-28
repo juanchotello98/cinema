@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Crear Sala</h1>
+<div mat-dialog-content>
+    <form [formGroup]="roomForm">
+        <!-- Nombre -->
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input formControlName="name" matInput placeholder="SALA1">
+        </mat-form-field>
+    
+        <!-- Codigo -->
+        <mat-form-field appearance="outline">
+            <mat-label>Código</mat-label>
+            <input formControlName="code" matInput placeholder="0001">
+        </mat-form-field>
+    
+        <!-- Capacidad -->
+        <mat-form-field appearance="outline">
+            <mat-label>Capacidad</mat-label>
+            <input type="number" formControlName="capacity" matInput placeholder="25">
+        </mat-form-field>
+    </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cerrar</button>
+    <button mat-raised-button style="margin-left: 8px;" color="primary" (click)="addRoom()" mati-dialog-close>Guardar</button>
+</div>
